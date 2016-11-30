@@ -1,0 +1,25 @@
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\bin\Debug\Smista File.exe.config
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\bin\Debug\Smista File.exe
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\bin\Debug\Smista File.pdb
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Debug\Smista File.csprojResolveAssemblyReference.cache
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Debug\Smista_File.Form1.resources
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Debug\Smista_File.Properties.Resources.resources
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Debug\Smista File.csproj.GenerateResource.Cache
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Debug\Smista File.exe
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Debug\Smista File.pdb
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Debug\Smista_File.Popup.resources
+C:\Users\stud3aii_3\Documents\Visual Studio 2012\Projects\Smista File\Smista File\bin\Debug\Smista File.exe.config
+C:\Users\stud3aii_3\Documents\Visual Studio 2012\Projects\Smista File\Smista File\obj\Debug\Smista File.exe
+C:\Users\stud3aii_3\Documents\Visual Studio 2012\Projects\Smista File\Smista File\obj\Debug\Smista File.pdb
+C:\Users\stud3aii_3\Documents\Visual Studio 2012\Projects\Smista File\Smista File\bin\Debug\Smista File.exe
+C:\Users\stud3aii_3\Documents\Visual Studio 2012\Projects\Smista File\Smista File\bin\Debug\Smista File.pdb
+C:\Users\stud3aii_3\Documents\Visual Studio 2012\Projects\Smista File\Smista File\obj\Debug\Smista File.csprojResolveAssemblyReference.cache
+C:\Users\stud3aii_3\Documents\Visual Studio 2012\Projects\Smista File\Smista File\obj\Debug\Smista_File.Form1.resources
+C:\Users\stud3aii_3\Documents\Visual Studio 2012\Projects\Smista File\Smista File\obj\Debug\Smista_File.Popup.resources
+C:\Users\stud3aii_3\Documents\Visual Studio 2012\Projects\Smista File\Smista File\obj\Debug\Smista_File.Properties.Resources.resources
+C:\Users\stud3aii_3\Documents\Visual Studio 2012\Projects\Smista File\Smista File\obj\Debug\Smista File.csproj.GenerateResource.Cache
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\bin\Debug\Smista File.exe.manifest
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\bin\Debug\Smista File.application
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Debug\Smista File.TrustInfo.xml
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Debug\Smista File.exe.manifest
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Debug\Smista File.application

@@ -1,0 +1,15 @@
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\bin\Release\Smista File.exe.config
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\bin\Release\Smista File.exe
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\bin\Release\Smista File.pdb
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Release\Smista File.csprojResolveAssemblyReference.cache
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Release\Smista_File.Form1.resources
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Release\Smista_File.Properties.Resources.resources
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Release\Smista File.csproj.GenerateResource.Cache
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Release\Smista File.exe
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Release\Smista File.pdb
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\bin\Release\Smista File.exe.manifest
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\bin\Release\Smista File.application
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Release\Smista File.TrustInfo.xml
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Release\Smista File.exe.manifest
+d:\documenti\visual studio 2015\Projects\Smista File\Smista File\obj\Release\Smista File.application
+D:\Documenti\Visual Studio 2015\Projects\Smista File\Smista File\obj\Release\Smista_File.Info.resources

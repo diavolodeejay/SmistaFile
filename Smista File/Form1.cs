@@ -16,13 +16,13 @@ namespace Smista_File
     public partial class Form1 : Form
     {
         string source, destination;
-        bool repeatBool,sistemamese;
+        bool repeatBool, sistemamese;
         int repeatTime = 1;
         int tiposmistamento;
         bool[] dimensioni = new bool[7];
         bool[] tipi = new bool[7];
         bool shortname = false;
-        string[] documentiArray = new string[] { ".doc", ".docx", ".log", ".msg	", ".odt", ".pages", ".rtf", ".tex", ".txt", ".wpd", ".wps",".xlr",".xls","xlsx",".pdf",".log" };
+        string[] documentiArray = new string[] { ".doc", ".docx", ".log", ".msg	", ".odt", ".pages", ".rtf", ".tex", ".txt", ".wpd", ".wps", ".xlr", ".xls", "xlsx", ".pdf", ".log" };
         string[] immaginiArray = new string[] { ".ico", ".3dm", ".3ds", ".max", ".bmp", ".jpeg", ".dds", ".gif", ".jpg", ".png", ".psd", ".pspimage", ".tga", ".thm", ".tif", ".tiff", ".yuv", ".raw", ".tiff", ".tif", ".tga", "targa" };
         string[] musicaArray = new string[] { ".aif", ".iff", ".m3u", ".m4a", ".mid", ".mp3", ".mpa", ".wav", ".wma", ".flac", ".aac" };
         string[] videoArray = new string[] { ".3g2", ".3gp", ".asf", ".avi", ".flv", ".m4v", ".mov", ".mp4", ".mpg", ".rm", ".srt", ".swf", ".vob", ".wmv", ".mkv", ".mpeg", ".mpe" };
@@ -39,11 +39,11 @@ namespace Smista_File
         private void SmistamentoDataWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             Progress.Invoke(new MethodInvoker(delegate { Progress.Value = e.ProgressPercentage; }));
-            if(e.ProgressPercentage == 0)
+            if (e.ProgressPercentage == 0)
             {
                 Console.WriteLine(DateTime.Now.ToString());
             }
-            else if(e.ProgressPercentage == 100)
+            else if (e.ProgressPercentage == 100)
             {
                 Console.WriteLine(DateTime.Now.ToString());
             }
@@ -56,17 +56,17 @@ namespace Smista_File
 
         private void ciaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-           /* var Popup = new Popup();
-            DialogResult ris = Popup.ShowDialog(this);
-            if (ris == DialogResult.OK)
-            {
-                TabPage agg = new TabPage(NomeNuovoSmist);
-                tabControl1.TabPages.Add(agg);
-                tabControl1.SelectedIndex = tabControl1.TabCount - 1;
-                CreaUI();
-            }
-            NomeNuovoSmist = "";*/
+
+            /* var Popup = new Popup();
+             DialogResult ris = Popup.ShowDialog(this);
+             if (ris == DialogResult.OK)
+             {
+                 TabPage agg = new TabPage(NomeNuovoSmist);
+                 tabControl1.TabPages.Add(agg);
+                 tabControl1.SelectedIndex = tabControl1.TabCount - 1;
+                 CreaUI();
+             }
+             NomeNuovoSmist = "";*/
         }
 
         private void aiutoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace Smista_File
                         {
                             MessageBox.Show("Impossibile avviare SmistaFile come amministratore. Assicurati di avere i permessi necessari.", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        
+
                     }
                     file = "";
                 }
@@ -214,7 +214,7 @@ namespace Smista_File
 
         private void NascondiTutto()
         {
-           // sfogliadest.Enabled = false;
+            // sfogliadest.Enabled = false;
             AltroBox.Visible = false;
             ArchiviBox.Visible = false;
             DocumentiBox.Visible = false;
@@ -271,14 +271,14 @@ namespace Smista_File
             }
             catch
             {
-                MessageBox.Show("C'è stato un errore","",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("C'è stato un errore", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void Repeat_CheckedChanged(object sender, EventArgs e)
         {
-            if(Repeat.Checked == true)
+            if (Repeat.Checked == true)
             {
                 RepeatValue.Enabled = true;
             }
@@ -411,10 +411,10 @@ namespace Smista_File
 
         private void RepeatValue_ValueChanged(object sender, EventArgs e)
         {
-            if(RepeatValue.Value > 1)
+            if (RepeatValue.Value > 1)
             {
                 Everylabel2.Text = "minuti.";
-                if(RepeatValue.Value > 120)
+                if (RepeatValue.Value > 120)
                 {
                     RepeatValue.Value = 120;
                 }
@@ -422,7 +422,7 @@ namespace Smista_File
             else
             {
                 Everylabel2.Text = "minuto.";
-                if(RepeatValue.Value < 1)
+                if (RepeatValue.Value < 1)
                 {
                     RepeatValue.Value = 0;
                 }
@@ -442,202 +442,21 @@ namespace Smista_File
                 }
                 else
                 {
-                    string dirtemp = destination;
                     List<string> listafiles = new List<string>(Directory.EnumerateFiles(source));
                     //tipo
-                    int l = listafiles.Count;
-                    int count = 0;
                     if (tiposmistamento == 0)
                     {
-                        foreach (string fi in listafiles)
-                        {
-                            dirtemp = destination;
-                            string nome = Path.GetFileName(fi);
-                            string ext = Path.GetExtension(fi);
-                            if (documentiArray.Any(ext.Contains) && tipi[0])
-                            {
-                                dirtemp = dirtemp + "\\Documenti";
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (immaginiArray.Any(ext.Contains) && tipi[1])
-                            {
-                                dirtemp = dirtemp + "\\Immagini";
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (videoArray.Any(ext.Contains) && tipi[2])
-                            {
-                                dirtemp = dirtemp + "\\Video";
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (musicaArray.Any(ext.Contains) && tipi[3])
-                            {
-                                dirtemp = dirtemp + "\\Musica";
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (exeArray.Any(ext.Contains) && tipi[4])
-                            {
-                                dirtemp = dirtemp + "\\Programmi";
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (archiviArray.Any(ext.Contains) && tipi[5])
-                            {
-                                dirtemp = dirtemp + "\\Archivi";
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (tipi[6])
-                            {
-                                dirtemp = dirtemp + "\\Altro";
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            count++;
-                            SmistamentoDataWorker.ReportProgress((count * 100) / l);
-                        }
+                        SmistaData(listafiles);
                     }
                     //dimensione
-                    else if (tiposmistamento == 1)
+                    if (tiposmistamento == 1)
                     {
-                        foreach (string fi in listafiles)
-                        {
-                            dirtemp = destination;
-                            string nome = Path.GetFileName(fi);
-                            FileInfo file = new FileInfo(fi);
-                            long size = file.Length;
-                            if (size <= 51200 && dimensioni[0])
-                            {
-                                if (shortname)
-                                {
-                                    dirtemp = dirtemp + "\\0 - 50Kb";
-                                }
-                                else
-                                {
-                                    dirtemp = dirtemp + "\\Files under or 50Kb";
-                                }
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (size > 51200 && size <= 512000 && dimensioni[1])
-                            {
-                                if (shortname)
-                                {
-                                    dirtemp = dirtemp + "\\51Kb - 500Kb";
-                                }
-                                else
-                                {
-                                    dirtemp = dirtemp + "\\Files over 50Kb and under or 500Kb";
-                                }
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (size > 512000 && size <= 1048576 && dimensioni[2])
-                            {
-                                if (shortname)
-                                {
-                                    dirtemp = dirtemp + "\\501Kb - 1Mb";
-                                }
-                                else
-                                {
-                                    dirtemp = dirtemp + "\\Files over 500Kb and under or 1Mb";
-                                }
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (size > 1048576 && size <= 10485760 && dimensioni[3])
-                            {
-                                if (shortname)
-                                {
-                                    dirtemp = dirtemp + "\\1Mb - 10Mb";
-                                }
-                                else
-                                {
-                                    dirtemp = dirtemp + "\\Files over 1 Mb and under or 10Mb";
-                                }
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (size > 10485760 && size <= 104857600 && dimensioni[4])
-                            {
-                                if (shortname)
-                                {
-                                    dirtemp = dirtemp + "\\10.01Mb - 100Mb";
-                                }
-                                else
-                                {
-                                    dirtemp = dirtemp + "\\Files over 10 Mb and under or 100Mb";
-                                }
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (size > 104857600 && size <= 2147483648 && dimensioni[5])
-                            {
-                                if (shortname)
-                                {
-                                    dirtemp = dirtemp + "\\100.01Mb - 2Gb";
-                                }
-                                else
-                                {
-                                    dirtemp = dirtemp + "\\Files over 100Mb and under or 2Gb";
-                                }
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            else if (size > 2147483648 && dimensioni[6])
-                            {
-                                if (shortname)
-                                {
-                                    dirtemp = dirtemp + "\\2Gb+";
-                                }
-                                else
-                                {
-                                    dirtemp = dirtemp + "\\Files over 2Gb";
-                                }
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                            }
-                            count++;
-                            SmistamentoDataWorker.ReportProgress((count * 100) / l);
-                        }
+                        SmistaSize(listafiles);
                     }
                     //data
                     else if (tiposmistamento == 2)
                     {
-                        if (sistemamese == true)
-                        {
-                            foreach (string fi in listafiles)
-                            {
-                                dirtemp = destination;
-                                string nome = Path.GetFileName(fi);
-                                DateTime edit = File.GetLastWriteTime(fi);
-                                int a = edit.Year;
-                                int m = edit.Month;
-                                dirtemp = dirtemp + "\\" + a.ToString() + "\\" + m.ToString();
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                                count++;
-                                SmistamentoDataWorker.ReportProgress((count * 100) / l);
-                            }
-                        }
-                        else
-                        {
-                            foreach (string fi in listafiles)
-                            {
-                                dirtemp = destination;
-                                string nome = Path.GetFileName(fi);
-                                DateTime edit = File.GetLastWriteTime(fi);
-                                int a = edit.Year;
-                                dirtemp = dirtemp + "\\" + a.ToString();
-                                Functions.ControllaCartella(dirtemp);
-                                File.Move(fi, dirtemp + "\\" + nome);
-                                count++;
-                                SmistamentoDataWorker.ReportProgress((count * 100) / l);
-                            }
-                        }
+                        SmistaTime(listafiles);
                     }
                 }
                 if (repeatBool)
@@ -652,5 +471,203 @@ namespace Smista_File
             }
         }
 
+        void SmistaData(List<string> files)
+        {
+            int count = 0;
+            foreach (string fi in files)
+            {
+                string desttemp = destination;
+                string nome = Path.GetFileName(fi);
+                string ext = Path.GetExtension(fi);
+                if (documentiArray.Any(ext.Contains) && tipi[0])
+                {
+                    desttemp = desttemp + "\\Documenti";
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (immaginiArray.Any(ext.Contains) && tipi[1])
+                {
+                    desttemp = desttemp + "\\Immagini";
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (videoArray.Any(ext.Contains) && tipi[2])
+                {
+                    desttemp = desttemp + "\\Video";
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (musicaArray.Any(ext.Contains) && tipi[3])
+                {
+                    desttemp = desttemp + "\\Musica";
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (exeArray.Any(ext.Contains) && tipi[4])
+                {
+                    desttemp = desttemp + "\\Programmi";
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (archiviArray.Any(ext.Contains) && tipi[5])
+                {
+                    desttemp = desttemp + "\\Archivi";
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (tipi[6])
+                {
+                    desttemp = desttemp + "\\Altro";
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                count++;
+                SmistamentoDataWorker.ReportProgress((count * 100) / files.Count);
+            }
+        }
+
+        void SmistaSize(List<string> files)
+        {
+            int count = 0;
+            foreach (string fi in files)
+            {
+                string desttemp = destination;
+                desttemp = destination;
+                string nome = Path.GetFileName(fi);
+                FileInfo file = new FileInfo(fi);
+                long size = file.Length;
+                if (size <= 51200 && dimensioni[0])
+                {
+                    if (shortname)
+                    {
+                        desttemp = desttemp + "\\0 - 50Kb";
+                    }
+                    else
+                    {
+                        desttemp = desttemp + "\\Files under or 50Kb";
+                    }
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (size > 51200 && size <= 512000 && dimensioni[1])
+                {
+                    if (shortname)
+                    {
+                        desttemp = desttemp + "\\51Kb - 500Kb";
+                    }
+                    else
+                    {
+                        desttemp = desttemp + "\\Files over 50Kb and under or 500Kb";
+                    }
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (size > 512000 && size <= 1048576 && dimensioni[2])
+                {
+                    if (shortname)
+                    {
+                        desttemp = desttemp + "\\501Kb - 1Mb";
+                    }
+                    else
+                    {
+                        desttemp = desttemp + "\\Files over 500Kb and under or 1Mb";
+                    }
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (size > 1048576 && size <= 10485760 && dimensioni[3])
+                {
+                    if (shortname)
+                    {
+                        desttemp = desttemp + "\\1Mb - 10Mb";
+                    }
+                    else
+                    {
+                        desttemp = desttemp + "\\Files over 1 Mb and under or 10Mb";
+                    }
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (size > 10485760 && size <= 104857600 && dimensioni[4])
+                {
+                    if (shortname)
+                    {
+                        desttemp = desttemp + "\\10.01Mb - 100Mb";
+                    }
+                    else
+                    {
+                        desttemp = desttemp + "\\Files over 10 Mb and under or 100Mb";
+                    }
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (size > 104857600 && size <= 2147483648 && dimensioni[5])
+                {
+                    if (shortname)
+                    {
+                        desttemp = desttemp + "\\100.01Mb - 2Gb";
+                    }
+                    else
+                    {
+                        desttemp = desttemp + "\\Files over 100Mb and under or 2Gb";
+                    }
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                else if (size > 2147483648 && dimensioni[6])
+                {
+                    if (shortname)
+                    {
+                        desttemp = desttemp + "\\2Gb+";
+                    }
+                    else
+                    {
+                        desttemp = desttemp + "\\Files over 2Gb";
+                    }
+                    Functions.ControllaCartella(desttemp);
+                    File.Move(fi, desttemp + "\\" + nome);
+                }
+                count++;
+                SmistamentoDataWorker.ReportProgress((count * 100) / files.Count);
+            }
+        }
+
+        void SmistaTime(List<string> files)
+        {
+            string dirtemp = destination;
+            int count = 0;
+            if (sistemamese == true)
+            {
+
+                foreach (string fi in files)
+                {
+                    dirtemp = destination;
+                    string nome = Path.GetFileName(fi);
+                    DateTime edit = File.GetLastWriteTime(fi);
+                    int a = edit.Year;
+                    int m = edit.Month;
+                    dirtemp = dirtemp + "\\" + a.ToString() + "\\" + m.ToString();
+                    Functions.ControllaCartella(dirtemp);
+                    File.Move(fi, dirtemp + "\\" + nome);
+                    count++;
+                    SmistamentoDataWorker.ReportProgress((count * 100) / files.Count);
+                }
+            }
+            else
+            {
+                foreach (string fi in files)
+                {
+                    dirtemp = destination;
+                    string nome = Path.GetFileName(fi);
+                    DateTime edit = File.GetLastWriteTime(fi);
+                    int a = edit.Year;
+                    dirtemp = dirtemp + "\\" + a.ToString();
+                    Functions.ControllaCartella(dirtemp);
+                    File.Move(fi, dirtemp + "\\" + nome);
+                    count++;
+                    SmistamentoDataWorker.ReportProgress((count * 100) / files.Count);
+                }
+            }
+        }
     }
 }

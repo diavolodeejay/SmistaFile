@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Smista File.exe" size="249312">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Smista File.exe" size="250336">
       <assemblyIdentity name="Smista File" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fBBgliz0BUznvNFexdAfRCpMS8cLahR3o6m2MQTPKWw=</dsig:DigestValue>
+        <dsig:DigestValue>NjMtPr/Fq2HVIphuj6Q/lrrAuHu8fFfHM/7Od6Ag3Bk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
